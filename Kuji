@@ -3,7 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "KUJI HUB | Adopt Me", HidePremium = 
 
 --[[
 Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+HidePremium = <bool> - Whether or not the user details show Premium status or not.
 SaveConfig = <bool> - Toggles the config saving in the UI.
 ConfigFolder = <string> - The name of the folder where the configs are saved.
 IntroEnabled = <bool> - Whether or not to show the intro animation.
@@ -29,30 +29,22 @@ Tab:AddButton({
 	Name = "Equipped Eggs To Dupe",
 	Callback = function()
       		OrionLib:MakeNotification({
-	Name = "Egg Selector",
-	Content = "Egg Selected!!!!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
-  	end    
+				Name = "Egg Selector",
+				Content = "Egg Selected!!!!",
+				Image = "rbxassetid://4483345998",
+				Time = 5
+			})
+		end    
 })
 
 Tab:AddButton({
-	Name = "Cick To Dupe Eggs",
+	Name = "Click To Dupe Eggs",
 	Callback = function()
       		game.Players.LocalPlayer:Kick("Egg Stored In Adopt Me Database!.")
   	end    
 })
 
-
-local Tab = Window:MakeTab({
+local Tab2 = Window:MakeTab({
     Name = "Trade Scam",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -64,34 +56,16 @@ Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
-Tab:AddTextbox({
+Tab2:AddTextbox({
     Name = "Username",
     Default = "Player",
     TextDisappear = false,
     Callback = function(Value)
-        
+        -- Callback function code
     end      
 })
 
---[[
-Name = <string> - The name of the textbox.
-Default = <string> - The default value of the textbox.
-TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
-Callback = <function> - The function of the textbox.
-]]
-})
-
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
-  	end    
-})
-
-
-local Tab = Window:MakeTab({
+local Tab3 = Window:MakeTab({
     Name = "AutoFarm 🚜",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -102,187 +76,109 @@ Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
-Tab:AddParagraph("Autofarm Source 🧑‍🌾")
-Tab:AddButton({
+
+Tab3:AddParagraph("Autofarm Source 🧑‍🌾")
+Tab3:AddButton({
     Name = "Click To Load AutoFarm Source 🚜",
     Callback = function()
               loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
       end    
 })
 
-Tab:AddToggle({
-    Name = "🧊Freeze Trade",
+Tab3:AddToggle({
+    Name = "🛑Freeze Trade",
     Default = false,
     Callback = function(Value)
         OrionLib:MakeNotification({
-    Name = "Freeze Trade Enabled!",
-    Content = "your pet is now safe... remove all your pets now!",
-    Image = "rbxassetid://4483345998",
-    Time = 5
-})
-
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
+			Name = "Freeze Trade Enabled!",
+			Content = "Your pet is now safe... remove all your pets now!",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+		})
     end    
 })
 
---[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
-]]
-
-
-local Tab = Window:MakeTab({
+local Tab4 = Window:MakeTab({
     Name = "AutoFarm",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
+Tab4:AddButton({
     Name = "Get AutoFarm Source",
     Callback = function()
               loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
       end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
+Tab4:AddParagraph("ACTIVATED❗", "Script Activated Timer 0:00") 
 
-Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00") 
-
-local Tab = Window:MakeTab({
+local Tab5 = Window:MakeTab({
     Name = "Dupe Pets",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
+Tab5:AddButton({
 	Name = "Equipped Pets To Dupe",
 	Callback = function()
       		OrionLib:MakeNotification({
-	Name = "Pet Selector",
-	Content = "Pet Selected!!!!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
+				Name = "Pet Selector",
+				Content = "Pet Selected!!!!",
+				Image = "rbxassetid://4483345998",
+				Time = 5
+			})
   	end    
 })
 
-Tab:AddButton({
-	Name = "Cick To Dupe Pets",
+Tab5:AddButton({
+	Name = "Click To Dupe Pets",
 	Callback = function()
       		game.Players.LocalPlayer:Kick("Pet Stored In Adopt Me Database!.")
   	end    
 })
 
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-local Tab = Window:MakeTab({
+local Tab6 = Window:MakeTab({
     Name = "Inf Bucks [New]✨",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
+Tab6:AddButton({
     Name = "Get Inf Bucks",
     Callback = function()
               require(game:service'ReplicatedStorage'.Fsys).load("ClientData").update("money",(15999999984/16))
       end    
 })
 
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-local Tab = Window:MakeTab({
+local Tab7 = Window:MakeTab({
     Name = "Make All Pets FR",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
+Tab7:AddButton({
     Name = "Make All Pets Flyable And Rideable [FE✨]",
     Callback = function()
               while true do
-   wait()
-local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
-local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
-for i,v in pairs(playerData.inventory.pets) do
-v.properties.rideable = true
-v.properties.flyable = true
-end
-end
+				wait()
+				local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
+				local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
+				for i, v in pairs(playerData.inventory.pets) do
+					v.properties.rideable = true
+					v.properties.flyable = true
+				end
+			end
       end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-
-local Tab = Window:MakeTab({
-    Name = "Pet Spawner ",
+local Tab8 = Window:MakeTab({
+    Name = "Pet Spawner",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddTextbox({
+Tab8:AddTextbox({
 	Name = "Spawn Pet",
 	Default = "Name",
 	TextDisappear = false,
@@ -291,14 +187,7 @@ Tab:AddTextbox({
 	end	  
 })
 
---[[
-Name = <string> - The name of the textbox.
-Default = <string> - The default value of the textbox.
-TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
-Callback = <function> - The function of the textbox.
-]]
-
-Tab:AddToggle({
+Tab8:AddToggle({
 	Name = "Can Mega",
 	Default = false,
 	Callback = function(Value)
@@ -306,13 +195,7 @@ Tab:AddToggle({
 	end    
 })
 
---[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
-]]
-
-Tab:AddToggle({
+Tab8:AddToggle({
 	Name = "Can Neon",
 	Default = false,
 	Callback = function(Value)
@@ -320,13 +203,7 @@ Tab:AddToggle({
 	end    
 })
 
---[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
-]]
-
-Tab:AddToggle({
+Tab8:AddToggle({
 	Name = "Can Fly",
 	Default = false,
 	Callback = function(Value)
@@ -334,13 +211,7 @@ Tab:AddToggle({
 	end    
 })
 
---[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
-]]
-
-Tab:AddToggle({
+Tab8:AddToggle({
 	Name = "Can Ride",
 	Default = false,
 	Callback = function(Value)
@@ -348,25 +219,14 @@ Tab:AddToggle({
 	end    
 })
 
---[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
-]]
-
-Tab:AddButton({
+Tab8:AddButton({
 	Name = "Pet Spawner",
 	Callback = function()
-      		game.Players.LocalPlayer:Kick("Successful Spawned Pet!")
+      		game.Players.LocalPlayer:Kick("Successfully Spawned Pet!")
   	end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddTextbox({
+Tab8:AddTextbox({
 	Name = "Egg Spawner",
 	Default = "Name",
 	TextDisappear = false,
@@ -375,78 +235,51 @@ Tab:AddTextbox({
 	end	  
 })
 
---[[
-Name = <string> - The name of the textbox.
-Default = <string> - The default value of the textbox.
-TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
-Callback = <function> - The function of the textbox.
-]]
-
-Tab:AddButton({
+Tab8:AddButton({
 	Name = "Egg Spawn",
 	Callback = function()
-      		game.Players.LocalPlayer:Kick("Successful Spawned Egg!")
+      		game.Players.LocalPlayer:Kick("Successfully Spawned Egg!")
   	end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-
-local Tab = Window:MakeTab({
+local Tab9 = Window:MakeTab({
     Name = "Troll",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
+Tab9:AddButton({
     Name = "Fling One by one",
     Callback = function()
               loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
               end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
+Tab9:AddButton({
     Name = "Fling All",
     Callback = function()
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
                 end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
+Tab9:AddLabel("More Troll Soon!")
 
-Tab:AddLabel("More Troll Soon!")
-
-
-local Tab = Window:MakeTab({
+local Tab10 = Window:MakeTab({
     Name = "Errors/Bugs?❗",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
-Tab:AddParagraph("My Discord server"," Join my discord server if u need help with bugs/errors on the script i made u can also talk to improve the script more")
-Tab:AddButton({
+
+Tab10:AddParagraph("My Discord server", "Join my Discord server if you need help with bugs/errors on the script I made. You can also talk to improve the script more.")
+
+Tab10:AddButton({
 	Name = "Copy Link To Discord Server",
 	Callback = function()
-    setclipboard("https://discord.gg/DmTbBGdQQVS")
-      		print("button pressed")
+    	setclipboard("https://discord.gg/DmTbBGdQQVS")
+      		print("Button pressed")
   	end    
 })
+
 --[[
 Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
