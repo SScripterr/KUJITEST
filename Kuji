@@ -445,6 +445,7 @@ local Tab = Window:MakeTab({
     Name = "Errors/Bugs?❗",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
+
 })
 Tab:AddParagraph("Private server Error❗","Being in a private server can cause alot of the main features of the script to not work please take this as a note if ur having problems with something not working this is probably the cause of it")
 Tab:AddParagraph("My Discord server","Please join my discord server if u need help with bugs/errors.")
