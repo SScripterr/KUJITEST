@@ -1,11 +1,11 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "KUJI HUB-Adopt me", HidePremium = false, IntroText = "KUJI HUB", IntroIcon = "rbxassetid://18170549235", Icon = "rbxassetid://18170549235", SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Kuji Hub-Adopt me", HidePremium = false, IntroText = "Kuji Hub", IntroIcon = "rbxassetid://18170549235", Icon = "rbxassetid://18170549235", SaveConfig = true, ConfigFolder = "OrionTest"})
 
 })
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SScripterr/Adoptme-KUJI/main/KUJIHUB"))()
 wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "KUJI HUB-Adopt me", HidePremium = false, IntroText = "KUJI HUB", IntroIcon = "rbxassetid://18170549235", Icon = "rbxassetid://18170549235", SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Kuji Hub-Adopt me", HidePremium = false, IntroText = "HiddenScriptsHub", IntroIcon = "rbxassetid://18170549235", Icon = "rbxassetid://18170549235", SaveConfig = true, ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
     Name = "Dupe Eggs 🥚",
     Icon = "rbxassetid://4483345998",
@@ -68,7 +68,7 @@ Time = <number> - The duration of the notfication.
   	end    
 })
 Tab:AddParagraph("Not Working?❗","Dupe Eggs Not Working? Check if u are on a private server this probably causes the error.")
-Tab:AddParagraph("Script Successfully Loaded","Enjoy The Script, Youtube is Kuji Hub")
+Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsHubYT🎩")
 
 local Tab = Window:MakeTab({
     Name = "AutoFarm 🚜",
@@ -93,7 +93,7 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
-Tab:AddParagraph("Script Successfully Loaded","Enjoy The Script, Youtube is Kuji Hub")
+Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsHubYT🎩") 
 
 local Tab = Window:MakeTab({
     Name = "Dupe Pets 🔨",
@@ -145,7 +145,7 @@ Time = <number> - The duration of the notfication.
   	end    
 })
 Tab:AddParagraph("Not Working?❗","Dupe Pets Not Working? Check if u are on a private server this probably causes the error.")
-Tab:AddParagraph("Script Successfully Loaded","Enjoy The Script, Youtube is Kuji Hub")
+Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, HiddenScriptsHubYT🎩")
 
 --[[
 Name = <string> - The name of the button.
@@ -176,7 +176,7 @@ Tab:AddButton({
       end    
 })
 
-Tab:AddParagraph("Script Successfully Loaded","Enjoy The Script, Youtube is Kuji Hub")
+Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsYT🎩")
 
 --[[
 Name = <string> - The name of the button.
@@ -232,20 +232,20 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
-Tab:AddParagraph("Script Successfully Loaded","Enjoy The Script, Youtube is Kuji Hub")
+Tab:AddParagraph("Script Successfully Loaded❗","Enjoy The Script, Youtube is HiddenScriptsYT🎩")
 
 
 local Tab = Window:MakeTab({
-    Name = "Errors/Bugs?",
+    Name = "Errors/Bugs?❗",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 Tab:AddParagraph("Private server Error❗","Being in a private server can cause alot of the main features of the script to not work please take this as a note if ur having problems with something not working this is probably the cause of it")
-Tab:AddParagraph("My Discord server","Please join my discord server if u need help with bugs/errors.")
+Tab:AddParagraph("My Discord server 🎩","Please join my discord server if u need help with bugs/errors.")
 Tab:AddButton({
-	Name = "Copy Link To Discord Server",
+	Name = "Copy Link To Discord Server 🎯",
 	Callback = function()
-    setclipboard("https://discord.gg/DmTbBGdQQV")
+    setclipboard("https://discord.com/invite/SASw2jSRkS")
       		print("button pressed")
   	end    
 })
