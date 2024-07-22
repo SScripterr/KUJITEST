@@ -14,13 +14,16 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "OrionTest"
 })
 
-local Tab = Window:MakeTab({
-    Name = "Dupe Eggs",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
+local function createTab(name, icon, premiumOnly)
+    return Window:MakeTab({
+        Name = name,
+        Icon = icon,
+        PremiumOnly = premiumOnly
+    })
+end
 
-Tab:AddButton({
+local dupeEggsTab = createTab("Dupe Eggs", "rbxassetid://4483345998", false)
+dupeEggsTab:AddButton({
     Name = "Equipped Eggs To Dupe",
     Callback = function()
         OrionLib:MakeNotification({
@@ -31,21 +34,15 @@ Tab:AddButton({
         })
     end
 })
-
-Tab:AddButton({
+dupeEggsTab:AddButton({
     Name = "Click To Dupe Eggs",
     Callback = function()
         game.Players.LocalPlayer:Kick("Egg Stored In Adopt Me Database!.")
     end
 })
 
-local Tab = Window:MakeTab({
-    Name = "Trade Scam",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddToggle({
+local tradeScamTab = createTab("Trade Scam", "rbxassetid://4483345998", false)
+tradeScamTab:AddToggle({
     Name = "🧊Freeze Trade",
     Default = false,
     Callback = function(Value)
@@ -57,8 +54,7 @@ Tab:AddToggle({
         })
     end
 })
-
-Tab:AddTextbox({
+tradeScamTab:AddTextbox({
     Name = "Username",
     Default = "Player",
     TextDisappear = false,
@@ -67,28 +63,17 @@ Tab:AddTextbox({
     end
 })
 
-local Tab = Window:MakeTab({
-    Name = "AutoFarm 🚜",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddParagraph("Autofarm Source 🧑‍🌾")
-
-Tab:AddButton({
+local autoFarmTab = createTab("AutoFarm 🚜", "rbxassetid://4483345998", false)
+autoFarmTab:AddParagraph("Autofarm Source 🧑‍🌾")
+autoFarmTab:AddButton({
     Name = "Click To Load AutoFarm Source 🚜",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
     end
 })
 
-local Tab = Window:MakeTab({
-    Name = "Dupe Pets",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddButton({
+local dupePetsTab = createTab("Dupe Pets", "rbxassetid://4483345998", false)
+dupePetsTab:AddButton({
     Name = "Equipped Pets To Dupe",
     Callback = function()
         OrionLib:MakeNotification({
@@ -99,39 +84,23 @@ Tab:AddButton({
         })
     end
 })
-
-Tab:AddButton({
+dupePetsTab:AddButton({
     Name = "Click To Dupe Pets",
     Callback = function()
         game.Players.LocalPlayer:Kick("Pet Stored In Adopt Me Database!.")
     end
 })
 
-local Tab = Window:MakeTab({
-    Name = "Inf Bucks [New]✨",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
+local infBucksTab = createTab("Inf Bucks [New]✨", "rbxassetid://4483345998", false)
+infBucksTab:AddButton({
     Name = "Click to load Infinite Bucks 💸",
     Callback = function()
-              require(game:service'ReplicatedStorage'.Fsys).load("ClientData").update("money",(15999999984/16))
-      end    
+        require(game:service'ReplicatedStorage'.Fsys).load("ClientData").update("money", (15999999984/16))
+    end    
 })
 
-local Tab = Window:MakeTab({
-    Name = "Make All Pets FR",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddButton({
+local makeAllPetsTab = createTab("Make All Pets FR", "rbxassetid://4483345998", false)
+makeAllPetsTab:AddButton({
     Name = "Make All Pets Flyable And Rideable [FE✨]",
     Callback = function()
         while true do
@@ -146,13 +115,8 @@ Tab:AddButton({
     end
 })
 
-local Tab = Window:MakeTab({
-    Name = "Pet Spawner",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddTextbox({
+local petSpawnerTab = createTab("Pet Spawner", "rbxassetid://4483345998", false)
+petSpawnerTab:AddTextbox({
     Name = "Spawn Pet",
     Default = "Name",
     TextDisappear = false,
@@ -160,47 +124,41 @@ Tab:AddTextbox({
         print(Value)
     end
 })
-
-Tab:AddToggle({
+petSpawnerTab:AddToggle({
     Name = "Can Mega",
     Default = false,
     Callback = function(Value)
         print(Value)
     end
 })
-
-Tab:AddToggle({
+petSpawnerTab:AddToggle({
     Name = "Can Neon",
     Default = false,
     Callback = function(Value)
         print(Value)
     end
 })
-
-Tab:AddToggle({
+petSpawnerTab:AddToggle({
     Name = "Can Fly",
     Default = false,
     Callback = function(Value)
         print(Value)
     end
 })
-
-Tab:AddToggle({
+petSpawnerTab:AddToggle({
     Name = "Can Ride",
     Default = false,
     Callback = function(Value)
         print(Value)
     end
 })
-
-Tab:AddButton({
+petSpawnerTab:AddButton({
     Name = "Pet Spawner",
     Callback = function()
         game.Players.LocalPlayer:Kick("Successful Spawned Pet!")
     end
 })
-
-Tab:AddTextbox({
+petSpawnerTab:AddTextbox({
     Name = "Egg Spawner",
     Default = "Name",
     TextDisappear = false,
@@ -208,93 +166,63 @@ Tab:AddTextbox({
         print(Value)
     end
 })
-
-Tab:AddButton({
+petSpawnerTab:AddButton({
     Name = "Egg Spawn",
     Callback = function()
         game.Players.LocalPlayer:Kick("Successful Spawned Egg!")
     end
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-local Tab = Window:MakeTab({
-    Name = "MFR-NFR 📦",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
+local mfrNfrTab = createTab("MFR-NFR 📦", "rbxassetid://4483345998", false)
+mfrNfrTab:AddButton({
     Name = "MFR Changer-(Inventory🎒)",
     Callback = function()
-              while true do
-   wait()
-local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
-local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
-for i,v in pairs(playerData.inventory.pets) do
-v.properties.rideable = true
-v.properties.flyable = true
-v.properties.mega_neon = true
-end
-end
-      end    
+        while true do
+            wait()
+            local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
+            local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
+            for i, v in pairs(playerData.inventory.pets) do
+                v.properties.rideable = true
+                v.properties.flyable = true
+                v.properties.mega_neon = true
+            end
+        end
+    end    
 })
-
-Tab:AddButton({
+mfrNfrTab:AddButton({
     Name = "NFR Changer-(Inventory🎒)",
     Callback = function()
-              while true do
-   wait()
-local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
-local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
-for i,v in pairs(playerData.inventory.pets) do
-v.properties.rideable = true
-v.properties.flyable = true
-v.properties.neon = true
-end
-end
-      end    
+        while true do
+            wait()
+            local clientData = require(game.ReplicatedStorage.ClientModules.Core.ClientData)
+            local playerData = clientData.get_data()[tostring(game.Players.LocalPlayer)]
+            for i, v in pairs(playerData.inventory.pets) do
+                v.properties.rideable = true
+                v.properties.flyable = true
+                v.properties.neon = true
+            end
+        end
+    end    
 })
 
-local Tab = Window:MakeTab({
-    Name = "Troll",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddButton({
+local trollTab = createTab("Troll", "rbxassetid://4483345998", false)
+trollTab:AddButton({
     Name = "Fling One by One",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
     end
 })
-
-Tab:AddButton({
+trollTab:AddButton({
     Name = "Fling All",
     Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
     end
 })
+trollTab:AddLabel("More Troll Soon!")
 
-Tab:AddLabel("More Troll Soon!")
-
-local Tab = Window:MakeTab({
-    Name = "Errors/Bugs?❗",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-Tab:AddParagraph("My Discord server 🎩", "Join my discord server if you need help with bugs/errors on the script. You can also talk to improve the script more.")
-Tab:AddButton({
+local errorsBugsTab = createTab("Errors/Bugs?❗", "rbxassetid://4483345998", false)
+errorsBugsTab:AddParagraph("My Discord server 🎩", "Join my discord server if you need help with bugs/errors on the script. You can also talk to improve the script more.")
+errorsBugsTab:AddButton({
     Name = "Copy Link To Discord Server 🎯",
     Callback = function()
         setclipboard("https://discord.gg/GUk9U2WY")
