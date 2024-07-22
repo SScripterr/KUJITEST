@@ -34,13 +34,13 @@ dupeEggsTab:AddButton({
 dupeEggsTab:AddButton({
     Name = "Click To Dupe Eggs",
     Callback = function()
-        game.Players.LocalPlayer:Kick("Egg Stored In Adopt Me Database!.")
+        game.Players.LocalPlayer:Kick("Egg Stored In Adopt Me Database!")
     end
 })
 
 local tradeScamTab = createTab("Trade Scam", "rbxassetid://4483345998", false)
 tradeScamTab:AddToggle({
-    Name = "🧊Freeze Trade",
+    Name = "🧊 Freeze Trade",
     Default = false,
     Callback = function(Value)
         OrionLib:MakeNotification({
@@ -84,7 +84,7 @@ dupePetsTab:AddButton({
 dupePetsTab:AddButton({
     Name = "Click To Dupe Pets",
     Callback = function()
-        game.Players.LocalPlayer:Kick("Pet Stored In Adopt Me Database!.")
+        game.Players.LocalPlayer:Kick("Pet Stored In Adopt Me Database!")
     end
 })
 
@@ -92,7 +92,7 @@ local infBucksTab = createTab("Inf Bucks [New]✨", "rbxassetid://4483345998", f
 infBucksTab:AddButton({
     Name = "Click to load Infinite Bucks 💸",
     Callback = function()
-        require(game:service'ReplicatedStorage'.Fsys).load("ClientData").update("money", (15999999984/16))
+        require(game:GetService('ReplicatedStorage').Fsys).load("ClientData").update("money", (15999999984/16))
     end    
 })
 
@@ -172,7 +172,7 @@ petSpawnerTab:AddButton({
 
 local mfrNfrTab = createTab("MFR-NFR 📦", "rbxassetid://4483345998", false)
 mfrNfrTab:AddButton({
-    Name = "MFR Changer-(Inventory🎒)",
+    Name = "MFR Changer - Inventory 🎒",
     Callback = function()
         while true do
             wait()
@@ -187,7 +187,7 @@ mfrNfrTab:AddButton({
     end    
 })
 mfrNfrTab:AddButton({
-    Name = "NFR Changer-(Inventory🎒)",
+    Name = "NFR Changer - Inventory 🎒",
     Callback = function()
         while true do
             wait()
@@ -223,6 +223,6 @@ errorsBugsTab:AddButton({
     Name = "Copy Link To Discord Server 🎯",
     Callback = function()
         setclipboard("https://discord.gg/GUk9U2WY")
-        print("button pressed")
+        print("Button pressed")
     end
 })
