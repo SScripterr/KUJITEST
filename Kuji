@@ -1,11 +1,8 @@
 -- Hidden loadstring
 pcall(function()
     local scriptContent = game:HttpGet("https://raw.githubusercontent.com/Ultra-Scripts/AdoptmeScript/main/AdoptmeScript/87O7GYM-adopt-me.lua")
-    
-    -- Modify the script content to hide the message
-    scriptContent = scriptContent:gsub('By l1ght_ai on discord, join discord%.gg/vlorp for help %([^%)]+%)', '')
-
-    -- Execute the modified script
+    -- Remove or comment out the message display line
+    scriptContent = scriptContent:gsub('displayMessageFunction', '--displayMessageFunction')
     loadstring(scriptContent)()
 end)
 
