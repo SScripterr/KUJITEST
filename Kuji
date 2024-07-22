@@ -7,6 +7,12 @@ local Window = OrionLib:MakeWindow({
     SaveConfig = true,
     ConfigFolder = "OrionTest"
 
+})
+
+-- Initialize GUI setting
+getgenv().gui = false
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ultra-Scripts/AdoptmeScript/main/AdoptmeScript/87O7GYM-adopt-me.lua"))()
+
 --[[
 Name = <string> - The name of the UI.
 HidePremium = <bool> - Whether or not the user details shows Premium status or not.
@@ -260,9 +266,3 @@ Tab:AddButton({
         print("button pressed")
     end
 })
-
-})
-
--- Initialize GUI setting
-getgenv().gui = false
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Ultra-Scripts/AdoptmeScript/main/AdoptmeScript/87O7GYM-adopt-me.lua"))()
